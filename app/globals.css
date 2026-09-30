@@ -11,14 +11,23 @@ body {
   color: #18181b;
 }
 
-.dark body {
-  background: #09090b;
-  color: #fafafa;
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #09090b;
+    color: #fafafa;
+  }
 }
 
 ::selection {
   background: #18181b;
   color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  ::selection {
+    background: #3f3f46;
+    color: #fafafa;
+  }
 }
 
 @keyframes badge-shine {

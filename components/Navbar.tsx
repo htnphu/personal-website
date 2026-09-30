@@ -61,7 +61,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="border-t border-zinc-200 px-6 py-4 md:hidden dark:border-zinc-800">
+        <div className="border-t border-zinc-200 bg-white px-6 py-4 md:hidden dark:border-zinc-800 dark:bg-zinc-950">
           <div className="flex flex-col gap-4">
             {links.map(([label, id]) => (
               <button

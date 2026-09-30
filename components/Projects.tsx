@@ -6,7 +6,9 @@ export default function Projects() {
       <div className="mx-auto max-w-6xl">
         <p className="text-sm font-medium text-zinc-500">04 — Projects</p>
 
-        <h2 className="mt-2 text-3xl font-bold sm:text-4xl">Featured Projects</h2>
+        <h2 className="mt-2 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl dark:text-zinc-100">
+          Featured Projects
+        </h2>
 
         <p className="mt-3 max-w-2xl text-base text-zinc-600 dark:text-zinc-400">
           Selected engineering work covering distributed streaming systems, RAG
@@ -27,10 +29,10 @@ export default function Projects() {
 
             <div className="mt-4 flex flex-col justify-between gap-4 md:flex-row md:items-baseline">
               <div>
-                <h3 className="text-2xl font-bold tracking-tight sm:text-3xl">
+                <h3 className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl dark:text-zinc-100">
                   CareerCompass AI
                 </h3>
-                <p className="mt-1 text-base font-medium text-zinc-600 dark:text-zinc-400">
+                <p className="mt-1 text-base font-medium text-zinc-600 dark:text-zinc-300">
                   AI-Powered Recruitment &amp; Semantic Job-Seeking Platform
                 </p>
               </div>
@@ -47,14 +49,14 @@ export default function Projects() {
                   href="https://github.com/CareerCompass-ai"
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-lg border border-zinc-300 px-4 py-2 text-xs font-medium transition hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800"
+                  className="rounded-lg border border-zinc-300 px-4 py-2 text-xs font-medium text-zinc-800 transition hover:bg-zinc-100 dark:border-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-800"
                 >
                   GitHub ↗
                 </a>
               </div>
             </div>
 
-            <p className="mt-5 max-w-4xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
+            <p className="mt-5 max-w-4xl text-base leading-7 text-zinc-600 dark:text-zinc-300">
               Led a 6-member engineering team to build and ship an end-to-end AI recruitment
               platform. Engineered a real-time CDC pipeline using PostgreSQL, Debezium, and
               Kafka to stream data changes directly into Qdrant, Weaviate, and Elasticsearch.
@@ -77,7 +79,7 @@ export default function Projects() {
               ].map((tech) => (
                 <span
                   key={tech}
-                  className="rounded-md border border-zinc-200 bg-white px-2.5 py-1 text-xs font-medium text-zinc-700 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-300"
+                  className="rounded-md border border-zinc-200 bg-white px-2.5 py-1 text-xs font-medium text-zinc-700 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300"
                 >
                   {tech}
                 </span>
@@ -88,18 +90,20 @@ export default function Projects() {
           {/* Secondary Projects Grid */}
           <div className="grid gap-8">
             {/* Retail Sales Forecasting */}
-            <article className="flex flex-col justify-between rounded-2xl border border-zinc-200 p-7 transition hover:border-zinc-300 dark:border-zinc-800 dark:hover:border-zinc-700">
+            <article className="flex flex-col justify-between rounded-2xl border border-zinc-200 bg-zinc-50/50 p-7 transition hover:border-zinc-300 dark:border-zinc-800 dark:bg-zinc-900/40 dark:hover:border-zinc-700">
               <div>
                 <div className="flex flex-wrap items-center justify-between gap-2">
-                  <h3 className="text-xl font-bold">Retail Sales Forecasting</h3>
-                  <span className="text-xs text-zinc-500">M5 Dataset</span>
+                  <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-100">
+                    Retail Sales Forecasting
+                  </h3>
+                  <span className="text-xs text-zinc-500 dark:text-zinc-400">M5 Dataset</span>
                 </div>
 
-                <p className="mt-1 text-sm font-medium text-zinc-500">
+                <p className="mt-1 text-sm font-medium text-zinc-500 dark:text-zinc-400">
                   55M+ Row Time-Series Machine Learning Pipeline
                 </p>
 
-                <p className="mt-4 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
+                <p className="mt-4 text-sm leading-6 text-zinc-600 dark:text-zinc-300">
                   Processed and analyzed the 55M+ row Walmart M5 forecasting
                   dataset. Engineered rolling statistical features, lag windows, and
                   calendar event signals. Trained and hyperparameter-tuned XGBoost,
@@ -119,7 +123,7 @@ export default function Projects() {
                   ].map((tech) => (
                     <span
                       key={tech}
-                      className="rounded-md bg-zinc-100 px-2.5 py-1 text-xs font-medium text-zinc-700 dark:bg-zinc-900 dark:text-zinc-300"
+                      className="rounded-md bg-zinc-200/60 px-2.5 py-1 text-xs font-medium text-zinc-800 dark:bg-zinc-800 dark:text-zinc-200"
                     >
                       {tech}
                     </span>
@@ -127,12 +131,12 @@ export default function Projects() {
                 </div>
               </div>
 
-              <div className="mt-7 pt-4 border-t border-zinc-100 dark:border-zinc-850">
+              <div className="mt-7 pt-4 border-t border-zinc-200/80 dark:border-zinc-800">
                 <a
                   href="https://github.com/htnphu/retail-sales-forecasting"
                   target="_blank"
                   rel="noreferrer"
-                  className="text-sm font-medium underline underline-offset-4 hover:text-black dark:hover:text-white"
+                  className="text-sm font-medium text-zinc-700 underline underline-offset-4 hover:text-black dark:text-zinc-300 dark:hover:text-white"
                 >
                   View on GitHub →
                 </a>

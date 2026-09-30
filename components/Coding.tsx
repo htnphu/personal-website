@@ -182,7 +182,9 @@ export default function Coding() {
       <div className="mx-auto max-w-6xl">
         <p className="text-sm font-medium text-zinc-500">03 — Coding</p>
 
-        <h2 className="mt-2 text-3xl font-bold sm:text-4xl">Coding Activity</h2>
+        <h2 className="mt-2 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl dark:text-zinc-100">
+          Coding Activity
+        </h2>
 
         <p className="mt-3 max-w-2xl text-base text-zinc-600 dark:text-zinc-400">
           Consistent practice across algorithms, distributed architecture, and open-source contributions.
@@ -194,7 +196,7 @@ export default function Coding() {
             {/* Header */}
             <div className="flex flex-wrap items-center justify-between gap-4 border-b border-zinc-100 pb-5 dark:border-zinc-850">
               <div className="flex items-center gap-3">
-                <h3 className="text-xl font-bold">LeetCode</h3>
+                <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-100">LeetCode</h3>
                 <a
                   href="https://leetcode.com/u/phuhanld/"
                   target="_blank"
@@ -423,7 +425,7 @@ export default function Coding() {
             {/* Header */}
             <div className="flex flex-wrap items-center justify-between gap-4 border-b border-zinc-100 pb-5 dark:border-zinc-850">
               <div className="flex items-center gap-3">
-                <h3 className="text-xl font-bold">GitHub</h3>
+                <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-100">GitHub</h3>
                 <a
                   href="https://github.com/htnphu"
                   target="_blank"

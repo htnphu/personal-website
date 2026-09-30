@@ -7,7 +7,8 @@ export default function Hero() {
         <div className="flex flex-col-reverse items-start justify-between gap-10 md:flex-row md:items-center">
           <div className="max-w-2xl">
             {/* Opportunity Status Pill */}
-            <div className="relative z-10 mb-4 inline-flex max-w-full items-center gap-2 overflow-hidden rounded-2xl sm:rounded-full border border-emerald-500/25 bg-white/90 px-3.5 py-1.5 text-xs text-zinc-700 shadow-xs backdrop-blur-xs transition-all duration-300 hover:border-emerald-500/45 hover:bg-white sm:text-sm dark:border-emerald-500/30 dark:bg-emerald-950/20 dark:text-zinc-300 dark:hover:border-emerald-500/50 dark:hover:bg-emerald-950/30">
+            {/* Opportunity Status Pill */}
+            <div className="relative z-10 mb-4 inline-flex max-w-full items-center gap-2 overflow-hidden rounded-2xl sm:rounded-full border border-emerald-500/25 bg-white/90 px-3.5 py-1.5 text-xs text-zinc-700 shadow-xs backdrop-blur-xs transition-all duration-300 hover:border-emerald-500/45 hover:bg-white sm:text-sm dark:border-emerald-500/40 dark:bg-emerald-950/40 dark:text-zinc-200 dark:hover:border-emerald-500/60 dark:hover:bg-emerald-950/60">
               {/* Occasional sweep/shine animation */}
               <span
                 aria-hidden="true"
@@ -23,7 +24,7 @@ export default function Hero() {
               {/* Content */}
               <span className="flex flex-wrap items-center gap-x-1.5 gap-y-0.5 leading-snug">
                 <span>Looking for my next opportunity</span>
-                <span className="text-zinc-400 dark:text-zinc-600 select-none">
+                <span className="text-zinc-400 dark:text-emerald-500/50 select-none">
                   ·
                 </span>
                 <a
@@ -41,24 +42,24 @@ export default function Hero() {
               </span>
             </div>
 
-            <p className="mb-2 text-sm font-medium tracking-wide text-zinc-500">
+            <p className="mb-2 text-sm font-medium tracking-wide text-zinc-500 dark:text-zinc-400">
               Hello, my name is
             </p>
 
-            <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
+            <h1 className="text-4xl font-bold tracking-tight text-zinc-900 sm:text-6xl dark:text-white">
               Otis Han
             </h1>
 
             <div className="mt-3">
-              <h2 className="text-xl font-semibold text-zinc-800 sm:text-2xl dark:text-zinc-200">
+              <h2 className="text-xl font-semibold text-zinc-800 sm:text-2xl dark:text-zinc-100">
                 Software Engineer
               </h2>
-              <p className="mt-1 text-base font-medium text-zinc-500 sm:text-lg">
+              <p className="mt-1 text-base font-medium text-zinc-500 sm:text-lg dark:text-zinc-400">
                 Backend · Distributed Systems · Data &amp; AI
               </p>
             </div>
 
-            <p className="mt-4 text-base leading-7 text-zinc-600 sm:text-lg sm:leading-8 dark:text-zinc-400">
+            <p className="mt-4 text-base leading-7 text-zinc-600 sm:text-lg sm:leading-8 dark:text-zinc-300">
               M.S. Computer Science student at Seattle University, specializing
               in Data Science. Experienced in engineering event-driven
               microservices, CDC pipelines, and scalable AI applications.
@@ -77,7 +78,7 @@ export default function Hero() {
                 href="https://github.com/htnphu"
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-lg border border-zinc-300 px-5 py-2.5 text-sm font-medium transition hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-900"
+                className="rounded-lg border border-zinc-300 px-5 py-2.5 text-sm font-medium text-zinc-800 transition hover:bg-zinc-100 dark:border-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-900"
               >
                 GitHub
               </a>
@@ -86,7 +87,7 @@ export default function Hero() {
                 href="https://linkedin.com/in/hanthonhatphu"
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-lg border border-zinc-300 px-5 py-2.5 text-sm font-medium transition hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-900"
+                className="rounded-lg border border-zinc-300 px-5 py-2.5 text-sm font-medium text-zinc-800 transition hover:bg-zinc-100 dark:border-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-900"
               >
                 LinkedIn
               </a>
@@ -95,7 +96,7 @@ export default function Hero() {
                 href="https://leetcode.com/u/phuhanld/"
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-lg border border-zinc-300 px-5 py-2.5 text-sm font-medium transition hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-900"
+                className="rounded-lg border border-zinc-300 px-5 py-2.5 text-sm font-medium text-zinc-800 transition hover:bg-zinc-100 dark:border-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-900"
               >
                 LeetCode
               </a>
