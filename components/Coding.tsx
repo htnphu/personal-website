@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 type Contribution = {
   date: string;
@@ -82,6 +82,19 @@ export default function Coding() {
 
   const [lcMonths, setLcMonths] = useState<MonthGroup[]>([]);
   const [lcLoading, setLcLoading] = useState(true);
+  const lcScrollRef = useRef<HTMLDivElement>(null);
+
+  // Auto-scroll to recent days on mobile/narrow screens
+  useEffect(() => {
+    if (!lcLoading && lcMonths.length > 0 && lcScrollRef.current) {
+      const timer = setTimeout(() => {
+        if (lcScrollRef.current) {
+          lcScrollRef.current.scrollLeft = lcScrollRef.current.scrollWidth;
+        }
+      }, 80);
+      return () => clearTimeout(timer);
+    }
+  }, [lcLoading, lcMonths]);
 
   // GitHub Stats
   const [ghStats, setGhStats] = useState({
@@ -92,6 +105,28 @@ export default function Coding() {
   });
   const [ghMonths, setGhMonths] = useState<MonthGroup[]>([]);
   const [ghLoading, setGhLoading] = useState(true);
+  const ghScrollRef = useRef<HTMLDivElement>(null);
+
+  // Auto-scroll to peak period (Apr–Aug) on mobile/narrow screens for GitHub
+  useEffect(() => {
+    if (!ghLoading && ghMonths.length > 0 && ghScrollRef.current) {
+      const timer = setTimeout(() => {
+        if (ghScrollRef.current) {
+          const aprOrMay =
+            (ghScrollRef.current.querySelector('[data-month="2024-04"]') as HTMLElement) ||
+            (ghScrollRef.current.querySelector('[data-month="2024-05"]') as HTMLElement);
+
+          if (aprOrMay) {
+            ghScrollRef.current.scrollLeft = Math.max(0, aprOrMay.offsetLeft - 8);
+          } else {
+            ghScrollRef.current.scrollLeft =
+              (ghScrollRef.current.scrollWidth - ghScrollRef.current.clientWidth) * 0.35;
+          }
+        }
+      }, 80);
+      return () => clearTimeout(timer);
+    }
+  }, [ghLoading, ghMonths]);
 
   useEffect(() => {
     async function fetchLeetCodeData() {
@@ -355,7 +390,10 @@ export default function Coding() {
               </div>
 
               {/* Month-Grouped Grid */}
-              <div className="mt-4 overflow-x-auto pb-2">
+              <div
+                ref={lcScrollRef}
+                className="mt-4 overflow-x-auto pb-2 scroll-smooth"
+              >
                 {lcLoading ? (
                   <p className="py-8 text-center text-xs text-zinc-500">Loading LeetCode heatmap...</p>
                 ) : (
@@ -408,15 +446,20 @@ export default function Coding() {
                 )}
               </div>
 
-              {/* Legend */}
-              <div className="mt-3 flex items-center justify-end gap-1.5 text-[11px] text-zinc-400">
-                <span>Less</span>
-                <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-xs bg-zinc-100 dark:bg-zinc-850" />
-                <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-xs bg-emerald-300 dark:bg-emerald-900" />
-                <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-xs bg-emerald-400 dark:bg-emerald-700" />
-                <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-xs bg-emerald-500 dark:bg-emerald-600" />
-                <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-xs bg-emerald-700 dark:bg-emerald-400" />
-                <span>More</span>
+              {/* Legend & Mobile Swipe Hint */}
+              <div className="mt-3 flex flex-wrap items-center justify-between gap-2 text-[11px] text-zinc-400">
+                <span className="text-[11px] font-medium text-emerald-600 sm:hidden dark:text-emerald-400">
+                  ← Swipe to view earlier months
+                </span>
+                <div className="flex items-center gap-1.5 ml-auto">
+                  <span>Less</span>
+                  <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-xs bg-zinc-100 dark:bg-zinc-850" />
+                  <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-xs bg-emerald-300 dark:bg-emerald-900" />
+                  <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-xs bg-emerald-400 dark:bg-emerald-700" />
+                  <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-xs bg-emerald-500 dark:bg-emerald-600" />
+                  <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-xs bg-emerald-700 dark:bg-emerald-400" />
+                  <span>More</span>
+                </div>
               </div>
             </div>
           </div>
@@ -506,13 +549,13 @@ export default function Coding() {
               </div>
 
               {/* Month-Grouped Grid */}
-              <div className="mt-4 overflow-x-auto pb-2">
+              <div ref={ghScrollRef} className="mt-4 overflow-x-auto pb-2 scroll-smooth">
                 {ghLoading ? (
                   <p className="py-8 text-center text-xs text-zinc-500">Loading GitHub 2024 heatmap...</p>
                 ) : (
                   <div className="flex w-full min-w-[780px] items-start justify-between">
                     {ghMonths.map((m) => (
-                      <div key={m.monthKey} className="flex flex-col items-center">
+                      <div key={m.monthKey} data-month={m.monthKey} className="flex flex-col items-center">
                         {/* 7-row columns for this month */}
                         <div className="flex gap-1 sm:gap-1.5">
                           {m.weeks.map((week, wIdx) => (
@@ -559,15 +602,20 @@ export default function Coding() {
                 )}
               </div>
 
-              {/* Legend */}
-              <div className="mt-3 flex items-center justify-end gap-1.5 text-[11px] text-zinc-400">
-                <span>Less</span>
-                <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-xs bg-zinc-100 dark:bg-zinc-850" />
-                <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-xs bg-emerald-300 dark:bg-emerald-900" />
-                <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-xs bg-emerald-400 dark:bg-emerald-700" />
-                <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-xs bg-emerald-500 dark:bg-emerald-600" />
-                <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-xs bg-emerald-700 dark:bg-emerald-400" />
-                <span>More</span>
+              {/* Legend & Mobile Swipe Hint */}
+              <div className="mt-3 flex flex-wrap items-center justify-between gap-2 text-[11px] text-zinc-400">
+                <span className="text-[11px] font-medium text-emerald-600 sm:hidden dark:text-emerald-400">
+                  ← Swipe to view full year →
+                </span>
+                <div className="ml-auto flex items-center gap-1.5">
+                  <span>Less</span>
+                  <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-xs bg-zinc-100 dark:bg-zinc-850" />
+                  <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-xs bg-emerald-300 dark:bg-emerald-900" />
+                  <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-xs bg-emerald-400 dark:bg-emerald-700" />
+                  <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-xs bg-emerald-500 dark:bg-emerald-600" />
+                  <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-xs bg-emerald-700 dark:bg-emerald-400" />
+                  <span>More</span>
+                </div>
               </div>
             </div>
           </div>

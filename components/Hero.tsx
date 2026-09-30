@@ -7,39 +7,43 @@ export default function Hero() {
         <div className="flex flex-col-reverse items-start justify-between gap-10 md:flex-row md:items-center">
           <div className="max-w-2xl">
             {/* Opportunity Status Pill */}
-            {/* Opportunity Status Pill */}
-            <div className="relative z-10 mb-4 inline-flex max-w-full items-center gap-2 overflow-hidden rounded-2xl sm:rounded-full border border-emerald-500/25 bg-white/90 px-3.5 py-1.5 text-xs text-zinc-700 shadow-xs backdrop-blur-xs transition-all duration-300 hover:border-emerald-500/45 hover:bg-white sm:text-sm dark:border-emerald-500/40 dark:bg-emerald-950/40 dark:text-zinc-200 dark:hover:border-emerald-500/60 dark:hover:bg-emerald-950/60">
-              {/* Occasional sweep/shine animation */}
-              <span
-                aria-hidden="true"
-                className="animate-badge-shine pointer-events-none absolute inset-y-0 -left-full w-2/3 bg-linear-to-r from-transparent via-white/80 to-transparent dark:via-emerald-300/15"
-              />
+            <div className="flex justify-center md:justify-start">
+              <a
+                href="#coding"
+                className="group/pill relative z-10 mb-5 inline-flex w-fit items-center overflow-hidden rounded-xl border border-emerald-500/25 bg-white/90 px-3.5 py-2 text-xs shadow-xs backdrop-blur-xs transition-all duration-300 hover:border-emerald-500/45 hover:bg-white sm:rounded-full sm:px-4 sm:py-1.5 sm:text-sm dark:border-emerald-500/40 dark:bg-emerald-950/40 dark:hover:border-emerald-500/60 dark:hover:bg-emerald-950/60"
+              >
+                {/* Occasional sweep/shine animation */}
+                <span
+                  aria-hidden="true"
+                  className="animate-badge-shine pointer-events-none absolute inset-y-0 -left-full w-2/3 bg-linear-to-r from-transparent via-white/80 to-transparent dark:via-emerald-300/15"
+                />
 
-              {/* Pulsing Status Dot */}
-              <span className="relative flex h-2 w-2 shrink-0">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75 motion-reduce:hidden" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
-              </span>
-
-              {/* Content */}
-              <span className="flex flex-wrap items-center gap-x-1.5 gap-y-0.5 leading-snug">
-                <span>Looking for my next opportunity</span>
-                <span className="text-zinc-400 dark:text-emerald-500/50 select-none">
-                  ·
-                </span>
-                <a
-                  href="#coding"
-                  className="group/pill inline-flex items-center gap-0.5 font-semibold text-emerald-700 underline decoration-emerald-500/40 underline-offset-3 transition hover:text-emerald-900 hover:decoration-emerald-700 dark:text-emerald-400 dark:decoration-emerald-400/50 dark:hover:text-emerald-200 dark:hover:decoration-emerald-300"
-                >
-                  <span>Putting in the work every day.</span>
-                  <span
-                    aria-hidden="true"
-                    className="text-xs transition-transform duration-200 group-hover/pill:translate-x-0.5 group-hover/pill:-translate-y-0.5"
-                  >
-                    ↗
+                {/* Content */}
+                <span className="flex flex-col items-center gap-1 sm:flex-row sm:items-center sm:gap-1.5">
+                  <span className="flex items-center gap-1.5 font-medium text-zinc-700 dark:text-zinc-200">
+                    {/* Pulsing Status Dot */}
+                    <span className="relative flex h-2 w-2 shrink-0">
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75 motion-reduce:hidden" />
+                      <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+                    </span>
+                    <span>Looking for my next opportunity</span>
                   </span>
-                </a>
-              </span>
+
+                  <span className="hidden text-zinc-300 sm:inline dark:text-emerald-500/50 select-none">
+                    ·
+                  </span>
+
+                  <span className="inline-flex items-center gap-0.5 font-semibold text-emerald-600 transition-colors group-hover/pill:text-emerald-700 dark:text-emerald-400 dark:group-hover/pill:text-emerald-300">
+                    <span>Putting in the work every day.</span>
+                    <span
+                      aria-hidden="true"
+                      className="text-xs transition-transform duration-200 group-hover/pill:translate-x-0.5 group-hover/pill:-translate-y-0.5"
+                    >
+                      ↗
+                    </span>
+                  </span>
+                </span>
+              </a>
             </div>
 
             <p className="mb-2 text-sm font-medium tracking-wide text-zinc-500 dark:text-zinc-400">

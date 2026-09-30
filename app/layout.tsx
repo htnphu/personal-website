@@ -16,6 +16,13 @@ export const metadata: Metadata = {
   title: "Otis Han — Software Engineer",
   description:
     "Software Engineer specializing in Backend Systems, Distributed Architecture, and Data & AI. M.S. Computer Science student at Seattle University.",
+  icons: {
+    icon: [
+      { url: "/web-icon.png", type: "image/png" },
+    ],
+    shortcut: "/web-icon.png",
+    apple: "/web-icon.png",
+  },
 };
 
 export const viewport: Viewport = {
