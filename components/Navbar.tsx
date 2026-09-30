@@ -36,7 +36,7 @@ export default function Navbar() {
           href="/"
           className="text-lg font-bold tracking-tight text-zinc-900 transition hover:opacity-80 dark:text-white"
         >
-          Phu Han
+          Otis Han
         </Link>
 
         <div className="hidden gap-7 md:flex">
