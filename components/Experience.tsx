@@ -18,34 +18,97 @@ export default function Experience() {
 
             <p className="mt-1 text-sm font-medium text-zinc-600 dark:text-zinc-400">Hasaki Technology</p>
 
-            <ul className="mt-4 space-y-3 text-base leading-7 text-zinc-600 dark:text-zinc-300">
+            <ul className="mt-4 space-y-3.5 text-base leading-7 text-zinc-600 dark:text-zinc-300">
               <li>
-                • Engineered a distributed Order Management System in Go,
-                processing 200K+ weekly orders using Kafka and background
-                workers.
+                • Engineered a distributed{" "}
+                <strong className="font-semibold text-zinc-900 dark:text-zinc-100">
+                  Order Management System
+                </strong>{" "}
+                in{" "}
+                <strong className="font-semibold text-zinc-900 dark:text-zinc-100">
+                  Go
+                </strong>
+                , consuming{" "}
+                <strong className="font-semibold text-zinc-900 dark:text-zinc-100">
+                  Kafka
+                </strong>{" "}
+                event streams and coordinating background workers to process{" "}
+                <strong className="font-semibold text-zinc-900 dark:text-zinc-100">
+                  200K+ weekly orders
+                </strong>{" "}
+                with low-latency, reliable handling under high-concurrency
+                workloads.
               </li>
 
               <li>
-                • Built real-time CDC pipelines connecting MySQL, Kafka, and
-                Elasticsearch, eliminating manual Kafka publishing across 90% of
-                synchronization workflows.
+                • Built real-time CDC pipelines connecting (
+                <strong className="font-semibold text-zinc-900 dark:text-zinc-100">
+                  MySQL
+                </strong>{" "}
+                →{" "}
+                <strong className="font-semibold text-zinc-900 dark:text-zinc-100">
+                  Kafka &amp; Elasticsearch
+                </strong>
+                ), eliminating manual Kafka publishing across{" "}
+                <strong className="font-semibold text-zinc-900 dark:text-zinc-100">
+                  90% of data synchronization workflows
+                </strong>
+                .
               </li>
 
               <li>
                 • Redesigned a legacy synchronous export engine into an
-                event-driven Go/Kafka/MinIO pipeline processing 1M+ rows per
-                export and reducing API response time to under 100ms.
+                event-driven pipeline using{" "}
+                <strong className="font-semibold text-zinc-900 dark:text-zinc-100">
+                  Go
+                </strong>
+                ,{" "}
+                <strong className="font-semibold text-zinc-900 dark:text-zinc-100">
+                  Kafka
+                </strong>
+                , and{" "}
+                <strong className="font-semibold text-zinc-900 dark:text-zinc-100">
+                  MinIO
+                </strong>
+                , streaming{" "}
+                <strong className="font-semibold text-zinc-900 dark:text-zinc-100">
+                  1M+ rows
+                </strong>{" "}
+                per export via{" "}
+                <strong className="font-semibold text-zinc-900 dark:text-zinc-100">
+                  PIT/search_after
+                </strong>{" "}
+                pagination; reduced API response time to{" "}
+                <strong className="font-semibold text-zinc-900 dark:text-zinc-100">
+                  &lt;100ms
+                </strong>{" "}
+                and eliminated HTTP timeout/OOM failures.
               </li>
 
               <li>
-                • Built Go/Redis/Asynq workers for courier failover, address/COD
-                synchronization, and refund processing, saving 10 hours/week of
-                manual exception handling.
+                • Built{" "}
+                <strong className="font-semibold text-zinc-900 dark:text-zinc-100">
+                  Go/Redis/Asynq
+                </strong>{" "}
+                background workers automating post-order operations, including{" "}
+                <strong className="font-semibold text-zinc-900 dark:text-zinc-100">
+                  Third-Party Logistics courier failover
+                </strong>
+                , live address/COD sync, and return refund processing, saving{" "}
+                <strong className="font-semibold text-zinc-900 dark:text-zinc-100">
+                  10 hours/week
+                </strong>{" "}
+                of manual exception handling.
               </li>
 
               <li>
-                • Eliminated race conditions and duplicate transactions using
-                Redis distributed locking and optimistic concurrency control.
+                • Eliminated race conditions and duplicate transactions in
+                multi-threaded order workflows using{" "}
+                <strong className="font-semibold text-zinc-900 dark:text-zinc-100">
+                  Redis distributed locking
+                </strong>{" "}
+                and optimistic concurrency control, removing a recurring source
+                of production incidents.
               </li>
             </ul>
           </div>

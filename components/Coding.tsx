@@ -195,15 +195,16 @@ export default function Coding() {
           <div className="rounded-2xl border border-zinc-200 bg-white p-6 sm:p-7 dark:border-zinc-800 dark:bg-zinc-950">
             {/* Header */}
             <div className="flex flex-wrap items-center justify-between gap-4 border-b border-zinc-100 pb-5 dark:border-zinc-850">
-              <div className="flex items-center gap-3">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                 <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-100">LeetCode</h3>
                 <a
                   href="https://leetcode.com/u/phuhanld/"
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-full bg-amber-500/10 px-2.5 py-0.5 text-xs font-semibold text-amber-600 transition hover:bg-amber-500/20 hover:text-amber-700 dark:text-amber-400 dark:hover:bg-amber-500/20 dark:hover:text-amber-300"
+                  className="whitespace-nowrap inline-flex items-center gap-1 rounded-full bg-amber-500/10 px-2.5 py-0.5 text-xs font-semibold text-amber-600 transition hover:bg-amber-500/20 hover:text-amber-700 dark:text-amber-400 dark:hover:bg-amber-500/20 dark:hover:text-amber-300"
                 >
-                  @phuhanld ↗
+                  <span>@phuhanld</span>
+                  <span aria-hidden="true">↗</span>
                 </a>
               </div>
 
@@ -424,17 +425,18 @@ export default function Coding() {
           <div className="rounded-2xl border border-zinc-200 bg-white p-6 sm:p-7 dark:border-zinc-800 dark:bg-zinc-950">
             {/* Header */}
             <div className="flex flex-wrap items-center justify-between gap-4 border-b border-zinc-100 pb-5 dark:border-zinc-850">
-              <div className="flex items-center gap-3">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                 <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-100">GitHub</h3>
                 <a
                   href="https://github.com/htnphu"
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-full bg-blue-500/10 px-2.5 py-0.5 text-xs font-semibold text-blue-600 transition hover:bg-blue-500/20 hover:text-blue-700 dark:text-blue-400 dark:hover:bg-blue-500/20 dark:hover:text-blue-300"
+                  className="whitespace-nowrap inline-flex items-center gap-1 rounded-full bg-blue-500/10 px-2.5 py-0.5 text-xs font-semibold text-blue-600 transition hover:bg-blue-500/20 hover:text-blue-700 dark:text-blue-400 dark:hover:bg-blue-500/20 dark:hover:text-blue-300"
                 >
-                  @htnphu ↗
+                  <span>@htnphu</span>
+                  <span aria-hidden="true">↗</span>
                 </a>
-                <span className="rounded-full bg-emerald-500/10 px-2 py-0.5 text-[11px] font-medium text-emerald-700 dark:text-emerald-400">
+                <span className="whitespace-nowrap rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-[11px] font-medium text-emerald-700 dark:text-emerald-400">
                   Most Active Period: 2024
                 </span>
               </div>
@@ -450,42 +452,42 @@ export default function Coding() {
             </div>
 
             {/* GitHub Stats Row */}
-            <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
-              <div className="rounded-xl border border-zinc-100 bg-zinc-50/60 p-3.5 dark:border-zinc-850 dark:bg-zinc-900/30">
+            <div className="mt-6 grid grid-cols-2 gap-3 sm:gap-4 sm:grid-cols-4">
+              <div className="rounded-xl border border-zinc-100 bg-zinc-50/60 p-3 sm:p-3.5 dark:border-zinc-850 dark:bg-zinc-900/30">
                 <p className="text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
                   2024 Contributions
                 </p>
-                <p className="mt-1 text-2xl font-bold text-zinc-900 dark:text-zinc-100">
+                <p className="mt-1 text-xl sm:text-2xl font-bold text-zinc-900 dark:text-zinc-100">
                   {ghStats.total2024.toLocaleString()}
                 </p>
                 <p className="mt-0.5 text-[11px] text-zinc-400">Peak engineering activity</p>
               </div>
 
-              <div className="rounded-xl border border-zinc-100 bg-zinc-50/60 p-3.5 dark:border-zinc-850 dark:bg-zinc-900/30">
+              <div className="rounded-xl border border-zinc-100 bg-zinc-50/60 p-3 sm:p-3.5 dark:border-zinc-850 dark:bg-zinc-900/30">
                 <p className="text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
                   Public Repositories
                 </p>
-                <p className="mt-1 text-2xl font-bold text-zinc-900 dark:text-zinc-100">
+                <p className="mt-1 text-xl sm:text-2xl font-bold text-zinc-900 dark:text-zinc-100">
                   {ghStats.publicRepos}
                 </p>
                 <p className="mt-0.5 text-[11px] text-zinc-400">Open source &amp; systems</p>
               </div>
 
-              <div className="rounded-xl border border-zinc-100 bg-zinc-50/60 p-3.5 dark:border-zinc-850 dark:bg-zinc-900/30">
+              <div className="rounded-xl border border-zinc-100 bg-zinc-50/60 p-3 sm:p-3.5 dark:border-zinc-850 dark:bg-zinc-900/30">
                 <p className="text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
                   Peak Month
                 </p>
-                <p className="mt-1 text-2xl font-bold text-emerald-600 dark:text-emerald-400">
+                <p className="mt-1 text-xl sm:text-2xl font-bold text-emerald-600 dark:text-emerald-400">
                   {ghStats.peakMonth}
                 </p>
                 <p className="mt-0.5 text-[11px] text-zinc-400">1,409 in May–Jul</p>
               </div>
 
-              <div className="rounded-xl border border-zinc-100 bg-zinc-50/60 p-3.5 dark:border-zinc-850 dark:bg-zinc-900/30">
+              <div className="rounded-xl border border-zinc-100 bg-zinc-50/60 p-3 sm:p-3.5 dark:border-zinc-850 dark:bg-zinc-900/30">
                 <p className="text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
                   Key Deliverable
                 </p>
-                <p className="mt-1 text-base font-bold text-zinc-900 dark:text-zinc-100">
+                <p className="mt-1 text-sm sm:text-base font-bold tracking-tight text-zinc-900 dark:text-zinc-100 leading-snug">
                   CareerCompass AI
                 </p>
                 <p className="mt-0.5 text-[11px] text-zinc-400">Full-stack RAG &amp; Kafka</p>
